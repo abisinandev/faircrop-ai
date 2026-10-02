@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+body {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+:root {
+  --primary: #246B45;
+  --primary-dark: #174D32;
+  --primary-light: #E8F3EC;
+  --primary-foreground: #FFFFFF;
+
+  --earth: #8A6748;
+  --harvest: #D89A35;
+
+  --background: #FCFCF9;
+  --surface: #FFFFFF;
+
+  --foreground: #18231D;
+  --text-secondary: #536158;
+  --muted: #7A857D;
+  --muted-foreground: #7A857D;
+
+  --border: #E3E8E4;
+
+  --success: #2F7D4A;
+  --warning: #C58A24;
+  --error: #C94A4A;
+  --destructive: #C94A4A;
+  --destructive-foreground: #FFFFFF;
+  --info: #3478A8;
+
+  --secondary: var(--earth);
+  --secondary-foreground: #FFFFFF;
+
+  --card: var(--surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--foreground);
+
+  --accent: var(--primary-light);
+  --accent-foreground: var(--primary-dark);
+
+  --input: var(--border);
+  --ring: var(--primary);
+
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-earth: var(--earth);
+  --color-harvest: var(--harvest);
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+
+  --color-foreground: var(--foreground);
+  --color-text-secondary: var(--text-secondary);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-info: var(--info);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 0.75rem; /* 12px */
+  --radius-lg: 1rem; /* 16px */
+  --radius-xl: 1.25rem; /* 20px */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
