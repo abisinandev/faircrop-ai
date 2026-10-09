@@ -50,14 +50,14 @@ export function AIRecommendation({
           </div>
         )}
         <div className="flex flex-col gap-1">
-          <span className="text-[12px] text-muted-foreground font-medium text-primary">Recommended counter</span>
+          <span className="text-[12px] font-medium text-primary">Recommended counter</span>
           <span className="text-[18px] font-bold text-primary-dark">{format(recommendedPrice)}</span>
         </div>
       </div>
 
       <div className="flex flex-col gap-2">
         <span className="text-[14px] font-medium text-foreground">Why?</span>
-        <p className="text-[14px] leading-[20px] text-secondary-foreground">{reason}</p>
+        <p className="text-[14px] leading-[20px] text-muted-foreground">{reason}</p>
       </div>
 
       <div className="mt-2">
@@ -166,7 +166,7 @@ export function NegotiationSummary({
           <span className="text-[14px] font-medium">{format(buyerOffer)}</span>
         </div>
         <div className="flex flex-col gap-1">
-          <span className="text-[12px] text-muted-foreground text-primary">Current counter</span>
+          <span className="text-[12px] text-primary">Current counter</span>
           <span className="text-[14px] font-bold text-primary-dark">{currentCounter ? format(currentCounter) : '-'}</span>
         </div>
         <div className="flex flex-col gap-1">

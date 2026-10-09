@@ -101,7 +101,7 @@ export function OfferCard({
       </div>
       
       {offer.message && (
-        <div className="mt-1 p-3 rounded-md bg-muted/30 text-[14px] text-secondary-foreground border border-border/50">
+        <div className="mt-1 p-3 rounded-md bg-muted/30 text-[14px] text-foreground border border-border/50 italic">
           &quot;{offer.message}&quot;
         </div>
       )}

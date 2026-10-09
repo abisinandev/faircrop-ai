@@ -1,92 +1,96 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { NegotiationMessage } from "@/components/faircrop/negotiation";
-import { Sparkles, TrendingUp } from "lucide-react";
+import { Sparkles, TrendingUp, MapPin, ShieldCheck } from "lucide-react";
 
 function HeroProductVisual() {
   return (
-    <div className="relative w-full max-w-[520px] mx-auto">
-      {/* Listing card */}
-      <div className="bg-surface border border-border rounded-xl p-4 shadow-sm mb-3">
-        <div className="flex items-center justify-between mb-3">
-          <div>
-            <p className="text-[12px] text-muted-foreground font-medium uppercase tracking-wider">New listing</p>
-            <h3 className="text-[20px] font-semibold text-foreground">Tomato</h3>
-            <p className="text-[13px] text-muted-foreground">Local variety · Malappuram, Kerala</p>
+    <div className="relative w-full">
+      {/* Main image + cards layout matching Figma */}
+      <div className="relative flex items-start justify-center">
+        {/* Farmer image */}
+        <div className="relative z-10 w-[260px] sm:w-[300px] shrink-0">
+          <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image
+              src="/farmer-hero.jpg"
+              alt="Farmer with basket of fresh vegetables"
+              width={300}
+              height={420}
+              className="w-full h-[360px] sm:h-[420px] object-cover object-top"
+              priority
+            />
           </div>
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-success/10 text-success border border-success/20">
-            Available
-          </span>
         </div>
-        <div className="flex items-end justify-between pt-3 border-t border-border">
-          <div>
-            <p className="text-[12px] text-muted-foreground">500 kg available</p>
-            <p className="text-[22px] font-bold text-foreground">₹52<span className="text-[14px] font-normal text-muted-foreground">/kg</span></p>
-          </div>
-          <div className="text-right">
-            <p className="text-[11px] text-muted-foreground flex items-center gap-1 justify-end">
-              <TrendingUp className="w-3 h-3" />
-              Market range
+
+        {/* Cards overlapping on right */}
+        <div className="relative z-20 flex flex-col gap-3 ml-[-40px] mt-8 max-w-[240px] sm:max-w-[270px]">
+          {/* Crop Listing Card */}
+          <div className="bg-white border border-border rounded-xl p-4 shadow-lg">
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">
+                Crop Listing
+              </p>
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-success/10 text-success border border-success/20">
+                Verified
+              </span>
+            </div>
+            <h3 className="text-[18px] font-bold text-foreground mb-2">Tomato</h3>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-1 mb-2">
+              <div>
+                <p className="text-[10px] text-muted-foreground">Available</p>
+                <p className="text-[13px] font-bold text-foreground">500 kg</p>
+              </div>
+              <div>
+                <p className="text-[10px] text-muted-foreground">Asking</p>
+                <p className="text-[13px] font-bold text-primary">₹52/kg</p>
+              </div>
+            </div>
+            <p className="text-[11px] text-muted-foreground flex items-center gap-1">
+              <MapPin className="w-3 h-3" />
+              Malappuram, Kerala
             </p>
-            <p className="text-[13px] font-medium text-foreground">₹48–₹53/kg</p>
           </div>
-        </div>
-      </div>
 
-      {/* Arrow connector */}
-      <div className="flex flex-col items-center my-1">
-        <div className="w-0.5 h-4 bg-border" />
-        <div className="w-2 h-2 border-r-2 border-b-2 border-border rotate-45 -mt-1" />
-      </div>
+          {/* Buyer offer card */}
+          <div className="bg-white border border-border rounded-xl p-3 shadow-md">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-primary/10 flex items-center justify-center">
+                  <ShieldCheck className="w-3.5 h-3.5 text-primary" />
+                </div>
+                <div>
+                  <p className="text-[12px] font-semibold text-foreground leading-tight">
+                    Green Valley Foods
+                  </p>
+                  <p className="text-[10px] text-muted-foreground">Buyer offer · 300 kg</p>
+                </div>
+              </div>
+              <p className="text-[13px] font-bold text-foreground">₹46/kg</p>
+            </div>
+          </div>
 
-      {/* AI Recommendation card */}
-      <div className="bg-primary-light border border-primary/20 rounded-xl p-4 shadow-sm mb-3">
-        <div className="flex items-center gap-1.5 mb-3 text-primary-dark font-semibold text-[13px]">
-          <Sparkles className="w-4 h-4" />
-          FairCrop recommendation
-        </div>
-        <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-3">
-          <div>
-            <p className="text-[11px] text-muted-foreground">Buyer offered</p>
-            <p className="text-[14px] font-semibold text-foreground">₹46/kg</p>
-          </div>
-          <div>
-            <p className="text-[11px] text-muted-foreground">Market range</p>
-            <p className="text-[14px] font-semibold text-foreground">₹48–₹53/kg</p>
-          </div>
-          <div>
-            <p className="text-[11px] text-muted-foreground">Your minimum</p>
-            <p className="text-[14px] font-semibold text-foreground">₹49/kg</p>
-          </div>
-          <div>
-            <p className="text-[11px] text-primary font-medium">Suggested counter</p>
-            <p className="text-[16px] font-bold text-primary-dark">₹51/kg</p>
-          </div>
-        </div>
-        <p className="text-[12px] text-secondary-foreground leading-relaxed">
-          The offer is below the market range and your minimum. Countering at ₹51/kg is within range.
-        </p>
-      </div>
-
-      {/* Arrow connector */}
-      <div className="flex flex-col items-center my-1">
-        <div className="w-0.5 h-4 bg-border" />
-        <div className="w-2 h-2 border-r-2 border-b-2 border-border rotate-45 -mt-1" />
-      </div>
-
-      {/* Deal confirmed card */}
-      <div className="bg-surface border border-success/30 rounded-xl p-4 shadow-sm">
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-[12px] text-muted-foreground font-medium uppercase tracking-wider">Deal agreed</p>
-            <p className="text-[18px] font-bold text-foreground mt-1">₹51/kg · 300 kg</p>
-            <p className="text-[12px] text-muted-foreground mt-0.5">Green Valley Foods · Verified buyer</p>
-          </div>
-          <div className="w-10 h-10 rounded-full bg-success/10 border border-success/20 flex items-center justify-center">
-            <svg className="w-5 h-5 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-            </svg>
+          {/* AI Recommendation card */}
+          <div className="bg-primary-light border border-primary/20 rounded-xl p-3 shadow-md">
+            <div className="flex items-center gap-1.5 mb-2 text-primary font-semibold text-[11px]">
+              <Sparkles className="w-3.5 h-3.5" />
+              FairCrop recommendation
+            </div>
+            <p className="text-[10px] text-primary-dark/70 mb-2">Offer analysis</p>
+            <div className="flex items-center justify-between mb-1">
+              <p className="text-[11px] text-primary-dark/80">Market range</p>
+              <p className="text-[11px] font-semibold text-primary-dark">₹48–₹53/kg</p>
+            </div>
+            <div className="flex items-center justify-between mb-2">
+              <p className="text-[11px] text-primary-dark/80">Farmer minimum</p>
+              <p className="text-[11px] font-semibold text-primary-dark">₹49/kg</p>
+            </div>
+            <div className="bg-white/60 rounded-lg p-2 border border-primary/15">
+              <p className="text-[9px] font-bold text-primary uppercase tracking-wider mb-0.5">
+                Suggested Counter
+              </p>
+              <p className="text-[18px] font-bold text-primary-dark">₹51/kg</p>
+            </div>
           </div>
         </div>
       </div>
@@ -98,7 +102,7 @@ export function HeroSection() {
   return (
     <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden" aria-labelledby="hero-heading">
       {/* Subtle background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-light/30 via-background to-background pointer-events-none" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-b from-primary-light/40 via-background to-background pointer-events-none" aria-hidden="true" />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-harvest/5 to-transparent pointer-events-none" aria-hidden="true" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,10 +139,28 @@ export function HeroSection() {
             <p className="text-[13px] text-muted-foreground">
               Free to join. No hidden fees to list your crop.
             </p>
+
+            {/* Social proof stats */}
+            <div className="flex items-center gap-6 pt-2 border-t border-border">
+              <div>
+                <p className="text-[22px] font-bold text-foreground">1,200+</p>
+                <p className="text-[12px] text-muted-foreground">Farmers registered</p>
+              </div>
+              <div className="w-px h-8 bg-border" />
+              <div>
+                <p className="text-[22px] font-bold text-foreground">₹4.2Cr</p>
+                <p className="text-[12px] text-muted-foreground">Deals facilitated</p>
+              </div>
+              <div className="w-px h-8 bg-border" />
+              <div>
+                <p className="text-[22px] font-bold text-foreground">98%</p>
+                <p className="text-[12px] text-muted-foreground">Satisfaction rate</p>
+              </div>
+            </div>
           </div>
 
           {/* Right — product visual */}
-          <div className="lg:pl-8">
+          <div className="lg:pl-4">
             <HeroProductVisual />
           </div>
         </div>

@@ -38,7 +38,7 @@ export function LandingNav() {
             <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
               <span className="text-white font-bold text-[14px]">F</span>
             </div>
-            <span className="font-bold text-[18px] text-foreground">FairCrop</span>
+            <span className="font-bold text-[18px] text-foreground">FairCrop AI</span>
           </Link>
 
           {/* Desktop nav */}

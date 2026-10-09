@@ -69,7 +69,7 @@ export function BuyerSection() {
             <Button
               size="lg"
               variant="outline"
-              className="w-fit px-8 h-12 text-[16px] mt-2 border-white/20 text-background hover:bg-white/8 hover:text-background"
+              className="w-fit px-8 h-12 text-[16px] mt-2 border-white/30 text-white bg-white/10 hover:text-white"
               asChild
             >
               <Link href="/register/buyer">Find Produce</Link>
